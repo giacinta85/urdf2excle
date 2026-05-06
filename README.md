@@ -18,21 +18,23 @@
 
 ## 安装 Installation
 
-> 支持 Windows / Ubuntu / macOS，推荐使用 conda 管理 Python 环境。
+> 支持 Windows / Ubuntu / macOS，推荐使用 **Miniconda** 管理 Python 环境。
 
-### 0. 安装 conda（首次，仅需一次）
+### 0. 安装 Miniconda（首次，仅需一次）
 
 <details>
 <summary><b>Windows</b></summary>
 
-1. 前往 https://docs.conda.io/en/latest/miniconda.html  
-   下载 **Miniconda3 Windows 64-bit**（Python 3.11）并双击安装。
+1. 前往 https://www.anaconda.com/download/success  
+   选择 **Miniconda3 Windows 64-bit**，下载 `.exe` 安装包并双击运行。  
+   安装时勾选 **「Add Miniconda3 to PATH」** 或使用默认选项均可。
 
-2. 安装完成后打开 **开始菜单 → Anaconda Prompt**。
+2. 安装完成后打开 **开始菜单 → Anaconda Prompt**（推荐）或普通 cmd。
 
 3. 验证安装：
 ```bat
 conda --version
+python --version
 ```
 
 </details>
@@ -41,15 +43,22 @@ conda --version
 <summary><b>Ubuntu / Linux</b></summary>
 
 ```bash
-# 下载安装脚本（x86_64，如为 ARM 请替换对应版本）
+# x86_64
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
-# 按提示操作，选择 yes 初始化 shell
-# 完成后重开终端，或执行：
-source ~/.bashrc
+
+# ARM64（Jetson / 树莓派等）
+# wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh
+
+bash Miniconda3-latest-Linux-*.sh
+# 提示 "Do you wish to update your shell profile?" 选 yes
+
+# 重新加载（或重开终端）
+source ~/.bashrc    # bash
+# source ~/.zshrc   # zsh
 
 # 验证
 conda --version
+python --version
 ```
 
 </details>
@@ -66,8 +75,14 @@ bash Miniconda3-latest-MacOSX-arm64.sh
 # curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 # bash Miniconda3-latest-MacOSX-x86_64.sh
 
-# 按提示操作，完成后重开终端
+# 提示 "Do you wish to update your shell profile?" 选 yes
+# 完成后重新加载（或重开终端）
+source ~/.zshrc         # zsh（macOS 默认）
+# source ~/.bash_profile  # bash
+
+# 验证
 conda --version
+python --version
 ```
 
 </details>
