@@ -1,0 +1,36 @@
+# urdf2excel 字段配置
+# 将任意字段设为 false 可在输出 Excel 中隐藏该列
+# Set any field to false to exclude it from the Excel output
+
+joint_fields:
+  robot_name:     true   # 机器人名称 (from <robot name="...">)
+  urdf_file:      true   # URDF 文件相对路径
+  joint_name:     true   # 关节名称
+  joint_type:     true   # 关节类型 (revolute/prismatic/fixed/...)
+  parent_link:    true   # 父连杆
+  child_link:     true   # 子连杆
+  axis_xyz:       true   # 旋转/移动轴向量
+  origin_xyz:     true   # 关节位置 xyz (m)
+  origin_rpy:     false  # 关节姿态 rpy (rad)
+  limit_lower:    true   # 关节下限 (rad 或 m)
+  limit_upper:    true   # 关节上限 (rad 或 m)
+  limit_effort:   true   # 最大力矩/力 (N·m 或 N)
+  limit_velocity: true   # 最大速度 (rad/s 或 m/s)
+  damping:        false  # 阻尼系数
+  friction:       false  # 摩擦系数
+
+inertia_fields:
+  robot_name: true   # 机器人名称
+  urdf_file:  true   # URDF 文件相对路径
+  link_name:  true   # 连杆名称
+  mass:       true   # 质量 (kg)
+  com_x:      true   # 质心 X (m)
+  com_y:      true   # 质心 Y (m)
+  com_z:      true   # 质心 Z (m)
+  com_rpy:    false  # 质心坐标系姿态 rpy
+  ixx:        true   # 惯量张量 Ixx (kg·m²)
+  ixy:        true   # 惯量张量 Ixy (kg·m²)
+  ixz:        true   # 惯量张量 Ixz (kg·m²)
+  iyy:        true   # 惯量张量 Iyy (kg·m²)
+  iyz:        true   # 惯量张量 Iyz (kg·m²)
+  izz:        true   # 惯量张量 Izz (kg·m²)
